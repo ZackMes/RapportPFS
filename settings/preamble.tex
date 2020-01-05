@@ -134,10 +134,13 @@
 %doc% \texttt{hyperref} package (see section~\ref{sec:pdf}).
 %doc% 
 \definecolor{DispositionColor}{RGB}{30,103,182}
+\definecolor{chocolate(web)}{RGB}{191,76,58}
+\definecolor{cerise}{RGB}{232,156,57}
+
 \chapterfont{\color{DispositionColor}}
 \sectionfont{\color{DispositionColor}}
-\subsectionfont{\color{DispositionColor}}
-\subsubsectionfont{\color{DispositionColor}}
+\subsectionfont{\color{chocolate(web)}}
+\subsubsectionfont{\color{cerise}}
 \paragraphfont{\color{DispositionColor}}
 
 
@@ -185,12 +188,26 @@
   \IfFileExists{#1}{}{\typeout{No file #1.}}
 }
 \makeatother
- 
+
 \newcommand*{\myexternaldocument}[1]{%
-    \externaldocument{#1}%
-    \addFileDependency{#1.tex}%
-    \addFileDependency{#1.aux}%
+  \externaldocument{#1}%
+  \addFileDependency{#1.tex}%
+  \addFileDependency{#1.aux}%
 }
+
+
+
+% Fix the abstract vertical space 
+\renewcommand{\abstractnamefont}{\normalfont\Large\bfseries\color{DispositionColor}}
+\setlength{\abstitleskip}{1cm}
+
+% default style for itemize
+\setlist[itemize]{label=\textbullet}
+
+
+% Bold and blue 
+
+\newcommand{\bb}[1]{\textbf{#1}}
 
 %doc% 
 %doc% \subsection{\texttt{csquotes} --- Correct quotation marks}\myinteresting

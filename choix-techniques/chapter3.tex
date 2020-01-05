@@ -1,38 +1,47 @@
-\chapter{Choix thechniques}
+\chapter{Les choix techniques}
+
 \section{Solution détaillée:}
-Notre solution consiste à concevoir et développer une application d'analyse des sentiments des tweets en temps réel en utilisant les outils et les librairies suivantes: 
+Notre solution consiste à concevoir et développer une application d'analyse des sentiments des tweets en temps réel en utilisant les outils et les librairies suivantes:
 \begin{itemize}
-    \item Chercher les tweets contenant le mot clé entré, en utilisant \textcolor{DispositionColor}{python-twitter}, la librairie qui fournit une interface Python pure pour utiliser l'API Twitter.
-    \item Analyser ces tweets à travers des models fournis par \textcolor{DispositionColor}{TextBlob}, \textcolor{DispositionColor}{Vader}, \textcolor{DispositionColor}{nltk}, et par un modèle Naive Bayes formé par nous-même, pour obtenir des statistiques sur le mot clé entré.
+    \item Chercher les tweets contenant le mot clé entré, en utilisant \bb{python-twitter}, la librairie qui fournit une interface Python pure pour utiliser l'API Twitter.
+    \item Analyser ces tweets à travers des models fournis par \bb{TextBlob}, \bb{Vader}, \bb{nltk}, et par un modèle Naive Bayes formé par nous-même, pour obtenir des statistiques sur le mot clé entré.
     \item Tracer les changements des sentiments de ces tweets.
     \item Donner la possibilité de sauvegarder les graphes tracées, ainsi que les tweets et ses analyses, sur le disque dur sous plusieurs formats (PNG, JPEG...).
-\end{itemize}   
-L'interaction avec l'utilisateur se fait via une interface graphique réalisée à l'aide de \textcolor{DispositionColor}{PyQt5} (l'ensemble de liaisons Python pour Qt), où s'affichent les tweets, les différentes statistiqueq ainsi que les graphes tracées. 
+\end{itemize}
+
+L'interaction avec l'utilisateur se fait via une interface graphique réalisée à l'aide de \bb{PyQt5} (l'ensemble de liaisons Python pour Qt), où s'affichent les tweets, les différentes statistiques ainsi que les graphes tracées.
+
 \section{Environnement logiciel:}
 Nous avons intérêt à mettre en place une architecture rigoureuse, de manière à garantir la
 maintenabilité, l'évolutivité et l'exploitabilité de notre application.
+
 \subsection{Python:}
-La nature de notre projet (Analyse de sentiments) nous a poussé à choisir Python pour le développement de notre application surtout qu'il est le langage le plus populaire pour les projets d'intelligence artificielle, "machine learning", et le "deep learning": \cite{python} \\
+La nature de notre projet (Analyse de sentiments) nous a poussé à choisir Python pour le développement de notre application surtout qu'il est le langage le plus populaire pour les projets d'intelligence artificielle, "machine learning", et le "deep learning": \cite{python}
 
 Python nous offre alors:
 \subsubsection{Un grand écosystème de bibliothèques:}
-Un grand choix de bibliothèques est l'une des principales raisons pour lesquelles Python est le langage de programmation le plus populaire utilisé pour l'intelligence artificielle et le "machine learning", surtout que ce dernier nécessite un traitement continu des données, et les bibliothèques Python nous permettent d'accéder, de gérer et de transformer les données.\\
+Un grand choix de bibliothèques est l'une des principales raisons pour lesquelles Python est le langage de programmation le plus populaire utilisé pour l'intelligence artificielle et le "machine learning", surtout que ce dernier nécessite un traitement continu des données, et les bibliothèques Python nous permettent d'accéder, de gérer et de transformer les données.
 
 On mentionne comme exemple: Scikit-learn, Pandas, TensorFlow, Matplotlib, NLTK, etc.
+
 \subsubsection{Flexibilité:}
 Il offre l'option pour choisir entre utiliser POO ou la méthode fonctionnelle, et il n'est pas non plus nécessaire de recompiler le code source, les développeurs peuvent implémenter toutes les modifications et voir rapidement les résultats, comme ils peuvent combiner Python et d'autres langages pour atteindre leurs objectifs.
+
 \subsubsection{Lisibilité:}
 Python est très facile à lire pour que chaque développeur Python puisse comprendre le code de ses pairs et le modifier, le copier ou le partager. Il n'y a pas de confusion, d'erreurs ou de paradigmes conflictuels, ce qui conduit à un échange plus efficace d'algorithmes, d'idées et d'outils.
+
 \subsection{Jupyter Notebook:}
 Le "notebook" étend l'approche basée sur la console à l'informatique interactive dans une nouvelle direction qualitative, en fournissant une application Web adaptée à la capture de l'ensemble du processus de calcul: développement, documentation et exécution de code, ainsi que communication des résultats. Le bloc-notes Jupyter combine deux composants:
 \begin{itemize}
-    \item \textcolor{DispositionColor}{Une application Web:} Un outil basé sur un navigateur pour la création interactive de documents qui combinent du texte explicatif, des mathématiques, des calculs et leur output media.
-    \item \textcolor{DispositionColor}{Documents "notebook":} Une représentation de tout le contenu visible dans l'application Web, y compris les entrées et sorties des calculs, le texte explicatif, les mathématiques, les images et les représentations media des objets. \textit{(Documentation)}
+    \item \bb{Une application Web:} Un outil basé sur un navigateur pour la création interactive de documents qui combinent du texte explicatif, des mathématiques, des calculs et leur output media.
+    \item \bb{Documents "notebook":} Une représentation de tout le contenu visible dans l'application Web, y compris les entrées et sorties des calculs, le texte explicatif, les mathématiques, les images et les représentations media des objets.
 \end{itemize}
-\subsection{Google Colab:}
-Google a fourni un service cloud gratuit basé sur les "Jupyter Notebooks" qui prend en charge le GPU gratuit. Google Colab nous permet de développer des applications de "deep learning" à l'aide de bibliothèques populaires telles que PyTorch, TensorFlow, Keras et OpenCV.\\
 
-On peut créer des "notebooks" dans Colab, les télécharger, les stocker, les partager, monter Google Drive et utiliser tout ce qu'on y a stocké, importer la plupart de nos répertoires préférés, télécharger des "notebooks" directement depuis GitHub, téléchargez des fichiers Kaggle, et plein d'autre fonctionnalités.\cite{googlecolab}
+\subsection{Google Colab:}
+Google a fourni un service cloud gratuit basé sur les "Jupyter Notebooks" qui prend en charge le GPU gratuit. Google Colab nous permet de développer des applications de "deep learning" à l'aide de bibliothèques populaires telles que PyTorch, TensorFlow, Keras et OpenCV.
+
+On peut créer des "notebooks" dans Colab, les télécharger, les stocker, les partager, monter Google Drive et utiliser tout ce qu'on y a stocké, importer la plupart de nos répertoires préférés, télécharger des "notebooks" directement depuis GitHub, téléchargez des fichiers Kaggle, et plein d'autre fonctionnalités~\cite{googlecolab}.
+
 \section{Conclusion:}
 Dans ce chpitre, nous avons présenté notre solution envisagée ainsi que l'environnement logiciel dans laquelle nous avons réalisé notre projet.
 

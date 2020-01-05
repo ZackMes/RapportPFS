@@ -1,9 +1,12 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt,a4paper,french]{report}
-%\documentclass[12pt]{report}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\textwidth}{6.25in} % original 6.25
-\setlength{\textheight}{8in}
+\documentclass[a4paper]{report}
+
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage[titletoc]{appendix}% http://ctan.org/pkg/appendices
+\usepackage{abstract}
+
 \newcommand{\mypapersize}{A4}
 \renewcommand{\baselinestretch}{1.3}
 \newcommand{\mylaterality}{oneside}
@@ -12,91 +15,73 @@
 \newcommand{\mylinespread}{1.0}
 \newcommand{\mydispositioncolor}{30,103,182}
 \newcommand{\mycolorlinks}{true}
-%\titleformat{\chapter}[display]{\normalfont\huge\bfseries\centering}
-%\newcommand{\cchapter}[1]{\chapter[#1]{\centering #1}}
 
-\oddsidemargin 20pt    %  Left margin on odd-numbered pages.
-\evensidemargin 20pt   %  Note that \oddsidemargin = \evensidemargin
-%\addtolength{\topmargin}{-.875in}
-\topmargin 0pt
-\usepackage{xcolor}
-\usepackage{sectsty}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{settings/preamble.tex}
 \input{settings/commands.tex}
-%\input{settings/typography.tex}
-
 \input{settings/pdf_settings.tex}
-%\usepackage{titlesec}
+
 \usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage{newunicodechar}
-\usepackage{babel}
-\usepackage{indentfirst}
+\usepackage[french]{babel}
 \usepackage{titlesec}
 \usepackage{amsmath}
-\usepackage{xr-hyper}
+
 \usepackage{hyperref}
-\usepackage{standalone}
-%\usepackage{zref}
-%\usepackage{subcaption}
+\usepackage{xr-hyper}
+\usepackage[nottoc]{tocbibind}
+
 \usepackage{subfig}
 \usepackage{graphicx} 
 \setlength{\parindent}{1em}
 \usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
-\usepackage {graphics}
+\usepackage{graphics}
+
 \usepackage{bookmark} 
 \usepackage{caption}
 \usepackage[font={color=DispositionColor,bf},figurename=Fig.,labelfont={it}]{caption}
-%\usepackage {lipsum}
-%\usepackage{math}
-%\usepackage {algorithm} 
-%\usepackage {algorithmic}
-%\usepackage[inline]{enumitem}
-%\externaldocument[external_]{naive_bayes_nlp_twitter}
-\usepackage{import}
-\usepackage{header}
 
-%\usepackage {jpgfig}
-%\usepackage {graphicx}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\ackname{Remerciements}
+\newcommand\abstname{Résumé}
+
+\input{settings/jupyter.tex}
+
 \begin{document}
+
 \begin{titlepage}
-\input{cover/cover.tex}
+    \input{cover/cover.tex}
 \end{titlepage}
-\pagenumbering{gobble}
-\newpage
-\pagenumbering{roman}
-\input{introduction/acknowledgement.tex}
-\newpage
-\input{introduction/abstract.tex}
-\newpage
-%\pagestyle{headings}
-%\pagenumbering{arabic}
-\tableofcontents 
+
+\tableofcontents
+
+\singlespacing
+
+\chapter*{\abstname}
+\addcontentsline{toc}{chapter}{\abstname}
+Trouver un framework pour prédire le cours des actions est une priorité sur le marché financier. Durant ce stage, nous proposons un framework utilisant des réseaux antagonistes génératifs (GANs) pour prévoir les cours des actions. Notre framework utilise la mémoire à court terme long (LSTM) comme générateur et le réseau neuronal convolutif (CNN) comme discriminateur. Le générateur est formé sur des données de bruit aléatoires au lieu des données réelles, pour essayer de prévoir les prix futurs de la bourse. Nos résultats montrent la possibilité d'utiliser des GANs pour prédire les cours des actions et les performances de notre modèle par rapport à d'autres approches.
+
+
+\chapter*{\ackname}
+\addcontentsline{toc}{chapter}{\ackname}
+Tout d’abord, nous tenons à remercier notre encadrant Pr. Mustapha AMEUR, qui nous a accompagnés tout au long de cette période du projet, par son suivi régulier, ses conseils pertinents quant à l’organisation et l’avancement de notre étude et sa disponibilité pour répondre à nos questions.
+
+Nous tenons à remercier profondément aussi les membres du jury pour avoir accepté d’évaluer notre travail.
+
+
 \listoffigures
 \listoftables
-\newpage
-\pagenumbering{arabic}
-\setcounter{page}{1}
+
 \input{contexte-generale/chapter1.tex}
 \input{etude-theorique-conception/chapter2.tex}
 \input{choix-techniques/chapter3.tex}
 \input{realisation/chapter4.tex}
-\newpage
-\input{conclusion/conclusion.tex}
-%\input{Conclusion and Future Work}
+\input{conclusion/chapter5.tex}
 
-\newpage
-%\input{futurework}
-\newpage
-\bibliography{bibliography/bibliography}{}
+\bibliography{bibliography}{}
 \bibliographystyle{apalike}
 
-\appendix
-\chapter{}
-\label{naivebayesimplementation}
-\input{annex/content.tex}
-%\input{naive_bayes_nlp_twitter.pdf}
+\begin{appendices}
+    \input{annexe/annexe-naive.tex}
+\end{appendices}
+
 \end{document}
