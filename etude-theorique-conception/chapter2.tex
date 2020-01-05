@@ -14,7 +14,7 @@ D'autre part, l'apprentissage automatique nécessite de former un modèle pour p
 Des travaux antérieurs sur l'analyse des sentiments ont exploité des méthodes bien connues d'apprentissage automatique (machine learning) supervisé, telles que Naive Bayes \cite{martinez2006learning}, SVMs \cite{vinet2011missing, ho1995random,wahid2017prestasi}. Des travaux plus récents utilisent des modèles d'apprentissage profond (deep learning) \cite{goldberg2017neural}, en particulier les réseaux neuronaux récurrents (RNN) et le réseau neuronal convolutionnel (CNN). Cette thèse porte également sur les modèles d'apprentissage profond.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre3/assets/sentiment-analysis-methods.jpg}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/sentiment-analysis-methods.jpg}
     \caption{Description des méthodes d'analyse des sentiments}
     \label{fig:my_label}
 \end{figure}
@@ -39,7 +39,7 @@ Les défis du traitement du langage naturel impliquent fréquemment la reconnais
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre2/assets/nlp.png}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/nlp.png}
     \caption{NLP est une branche de l'intelligence artificielle}
     \label{fig:my_label}
 \end{figure}
@@ -97,7 +97,7 @@ La production d'un résumé lisible d'un morceau de texte.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre2/assets/nlp1.png}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/nlp1.png}
     \caption{Processus NLP}
     \label{fig:my_label}
 \end{figure}
@@ -172,7 +172,7 @@ L'analyse de sentiment Vader renvoie un score de sentiment compris entre -1 et 1
 $x$ est la somme des scores de sentiment des mots constitutifs de la phrase et $\alpha$ est un paramètre de normalisation que nous fixons à 15. La normalisation est représentée graphiquement ci-dessous.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{chapitre2/assets/vader-normalization.png}
+    \includegraphics[width=0.6\textwidth]{etude-theorique-conception/assets/vader-normalization.png}
     \caption{Normalisation de Vader}
     \label{fig:my_label}
 \end{figure}
@@ -185,7 +185,7 @@ détaillons les différents éléments de conception, en commançant d'abord par
 La spécification de ces besoins va nous permettre d’avoir une meilleure approche des utilisateurs, des fonctionnalités et de la relation entre les deux. Elle sera alors sous forme d'un diagramme de cas d’utilisation où on va procéder par l'identification des acteurs agissant sur notre système et les différentes cas d'utilisation: \\
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre2/assets/useCase.png}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/useCase.png}
     \caption{Diagramme de cas d'utilisation}
     \label{fig:my_label}
 \end{figure}
@@ -193,7 +193,7 @@ La spécification de ces besoins va nous permettre d’avoir une meilleure appro
 Pour réaliser notre système, on a choisi à suivre une architecture adapté à la nature de notre projet que nous représentons dans ce diagramme:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre2/assets/architecture.png}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/architecture.png}
     \caption{Architecture du système}
     \label{fig:my_label}
 \end{figure}
@@ -213,7 +213,7 @@ système d'information.\\
 Vu la nature de notre projet, nous avons décidé de créer deux entités illustrées dans le diagramme suivant:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{chapitre2/assets/classDiagram.png}
+    \includegraphics[width=\textwidth]{etude-theorique-conception/assets/classDiagram.png}
     \caption{Diagramme de classes}
     \label{fig:my_label}
 \end{figure}
